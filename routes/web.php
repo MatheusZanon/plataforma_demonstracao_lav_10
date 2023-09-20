@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\ClientesController;
+
+
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', [HomepageController::class, 'index'])->name('homepage.index');
+
+Route::get('clientes/cadastro', [ClientesController::class, 'index'])->name('cadastro.index');
+Route::get('clientes/cadastro/store', [ClientesController::class, 'store'])->name('cadastro.store');
+
+

@@ -1,3 +1,9 @@
+.container{
+    height: 100vh;
+    display:flex;
+}
+
+
 .button {
     width:100%;
     border: none;
@@ -17,20 +23,21 @@
   }
 
 
-.column01 {
+.column-01 {
     background-image: linear-gradient(to right, #2980B9 , #154360);
     float: left;
     width: 25%;
     padding: 10px;
-    height: fit-content;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
   }
 
-.column02 {
+.column-02 {
     background-image: url('images/bg01.jpg');
     float: left;
     width: 75%;
     padding: 10px;
-    height: fit-content;
 }
 
 

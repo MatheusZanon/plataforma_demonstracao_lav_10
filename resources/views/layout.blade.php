@@ -10,16 +10,16 @@
 
     </head>
     <body>
-        <div class="row">
-        <div class="column01">
-            <h2 style="color:white">Home</h2>
-            <a href="#" class="button">Cadastrar Clientes</a>
-            <a href="#" class="button">Buscar Arquivos Drive</a>
-            <a href="#" class="button">Entrevistas e Registro de Currículo</a>
-        </div>
-        <div class="column02">
-            @yield('content')
-        </div>
+        <div class="container">
+            <div class="column-01">
+                <a href="{{route('homepage.index')}}"><h2 style="color:white">Home</h2></a>
+                <a href="{{route('cadastro.index')}}" class="button">Cadastrar Clientes</a>
+                <a href="#" class="button">Buscar Arquivos Drive</a>
+                <a href="#" class="button">Entrevistas e Registro de Currículo</a>
+            </div>
+            <div class="column-02">
+                @yield('content')
+            </div>
         </div>
     </body>
 
