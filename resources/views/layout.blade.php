@@ -3,14 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=devide-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 
         <title>Demonstração Laravel 10</title>
 
     </head>
     <body>
-        <div class="container">
+        <div class="containerHome">
             <div class="column-01">
                 <a href="{{route('homepage.index')}}"><h2 style="color:white">Home</h2></a>
                 <a href="{{route('cadastro.index')}}" class="button">Cadastrar Clientes</a>

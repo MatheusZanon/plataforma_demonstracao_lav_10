@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomepageController::class, 'index'])->name('homepage.index');
 
 Route::get('clientes/cadastro', [ClientesController::class, 'index'])->name('cadastro.index');
-Route::get('clientes/cadastro/store', [ClientesController::class, 'store'])->name('cadastro.store');
+Route::post('clientes/cadastro/store', [ClientesController::class, 'store'])->name('cadastro.store');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
