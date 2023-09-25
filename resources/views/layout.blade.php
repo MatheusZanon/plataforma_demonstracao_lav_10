@@ -19,7 +19,7 @@
                 <a href="{{route('homepage.index')}}"><h2 style="color:white">Home</h2></a>
                 <a href="{{route('cadastro.index')}}" class="button">Cadastrar Clientes</a>
                 <a href="{{route('drive.index')}}" class="button">Integração Google Drive</a>
-                <a href="#" class="button">Entrevistas e Currículos</a>
+                <a href="{{route('curriculo.index')}}" class="button">Entrevistas e Currículos</a>
             </div>
             <div class="column-02">
                 @yield('content')

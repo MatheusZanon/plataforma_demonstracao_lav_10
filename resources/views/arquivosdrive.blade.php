@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <form method="POST" action="{{ route('drive.store') }}"  enctype="multipart/formdata">
+        <form method="POST" action="{{ route('drive.store') }}"  enctype="multipart/form-data">
             <h2>Envio de Arquivos para o Google Drive</h2>
             <p>Por enquanto temos upload.</p>
             @csrf

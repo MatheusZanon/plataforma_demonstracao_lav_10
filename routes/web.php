@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\GDriveController;
-
+use App\Http\Controllers\CurriculoController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +31,10 @@ Route::get('/', [HomepageController::class, 'index'])->name('homepage.index');
 Route::get('clientes/cadastro', [ClientesController::class, 'index'])->name('cadastro.index');
 Route::post('clientes/cadastro/store', [ClientesController::class, 'store'])->name('cadastro.store');
 
-/*INTEGRAÇÃO GOOGLE DRIVE */
+/* INTEGRAÇÃO GOOGLE DRIVE */
 Route::get('drive/listagem', [GDriveController::class, 'index'])->name('drive.index');
 Route::post('drive/listagem/store', [GDriveController::class, 'store'])->name('drive.store');
+
+
+/* ENTREVISTAS E REGISTRO DE CURRICULO */
+Route::get('curriculos', [CurriculoController::class, 'index'])->name('curriculo.index');

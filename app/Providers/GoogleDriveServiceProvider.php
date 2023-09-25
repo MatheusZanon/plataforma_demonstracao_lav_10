@@ -20,17 +20,13 @@ class GoogleDriveServiceProvider extends ServiceProvider
     public function boot(): void
     {
         \Storage::extend("google", function($app, $config) {
-                $googleClient = new \Google_Client;
+                $googleClient = new \Google_Client();
                 $googleClient->setClientId($config['clientId']);
                 $googleClient->setClientSecret($config['clientSecret']);
                 $googleClient->refreshToken($config['refreshToken']);
+                $service = new \Google_Service_Drive($googleClient);
 
-                $options = [];
-                if(isset($config['teamDriveId'])) {
-                    $options['teamDriveId'] = $config['teamDriveId'];
-                }
-
-                $adapter = new \Masbug\Flysystem\GoogleDriveAdapter($service, $config['folder'] ?? '/', $options);
+                $adapter = new \Masbug\Flysystem\GoogleDriveAdapter($service, $config['folderId']);
                 $driver = new \League\Flysystem\Filesystem($adapter);
                 return new \Illuminate\Filesystem\FilesystemAdapter($driver, $adapter);
         });
