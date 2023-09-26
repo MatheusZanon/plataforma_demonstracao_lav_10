@@ -13,6 +13,8 @@ class GDriveController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->file("arquivoDrive")->store("", "google"));
+        $request->file("arquivoDrive")->store("", "google");
+
+        return view('arquivosdrive')->with('message', 'Upload de arquivo feito com sucesso!');
     }
 }
